@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# PBS Pro wrapper for: blast
+# by Kevin Guay (kguay@bigelow.org)
+# updated 10 April 2017
+
+### BEGIN PBS Pro Configuration Parameters
+
+# set the number of nodes and processes per node
+#PBS -l select=4:mpiprocs=8
+
+# set max wallclock time
+#PBS -l walltime=00:08:00
+
+# set name of job
+#PBS -N blast_wrapper
+
+# mail alert at (b)eginning, (e)nd and (a)bortion of execution
+#PBS -m bea
+
+# send mail to the following address
+#PBS -M it@bigelow.org
+
+# use submission environment
+#PBS -V
+
+### END PBS Pro Configuration Parameters
+  
+module use /mnt/scgc_nfs/opt/modulefiles/common/
+module load blast
+echo test
