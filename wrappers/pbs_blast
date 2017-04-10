@@ -25,7 +25,7 @@
 #PBS -V
 
 ### END PBS Pro Configuration Parameters
-  
+
 module use /mnt/scgc_nfs/opt/modulefiles/common/
 module load blast
-echo test
+qsub echo test
