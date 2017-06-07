@@ -15,7 +15,8 @@
 ## use one compute node and one cpu (this will default to use 2gb of memory)                                                      
 #PBS -l select=1:ncpus=1                                                        
                                                               
-## output files placed in output directory in the user vcc’s home directory                                     
+## output files placed in output directory in the user vcc’s home directory 
+## **** to use this script change vcc to your Bigelow username **** 
 #PBS -e /home/vcc/output                                                           
 #PBS -o /home/vcc/output                                                          
 
