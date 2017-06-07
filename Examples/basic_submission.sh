@@ -1,7 +1,7 @@
 #!/bin/bash                                                                     
 
 ## set name of script                                                           
-#PBS -N script_name                                                             
+#PBS -N basic_submission_script                                                             
 
 ## send the environment variables with job 
 #PBS -V
