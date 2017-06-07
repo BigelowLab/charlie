@@ -4,6 +4,13 @@
 ## set name of PBS job                                                           
 #PBS -N basic_submission_script                                                             
 
+## send email notification when execution begins(b), ends (e) or aborts(a)
+#PBS -m bea  
+
+## send email to this address
+## **** update this address to your email ****
+#PBS -M username@bigelow.org
+
 ## send the environment variables with job 
 #PBS -V
 
