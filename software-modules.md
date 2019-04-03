@@ -1,8 +1,8 @@
 # Software Modules
 
-## Environment Modules
+## Software Modules
 
-Environment modules allow users to load and unload specific versions of a program \(e.g. gcc, spades, openmpi, etc.\). The module commands \(below\) essentially just prepend a directory to your PATH variable.
+Software modules allow users to load and unload specific versions of a program \(e.g. gcc, spades, openmpi, etc.\). The module commands \(below\) essentially just prepend a directory to your PATH variable.
 
 ### Use modules from certain repository
 
