@@ -1,4 +1,4 @@
-# Charlie overview
+# Charlie Overview
 
 **charlie:** Bigelow's high performance computing cluster \(HPCC\), consisting of multiple nodes  
 **sfe:** Secure front end - for remote login without VPN  
