@@ -12,22 +12,6 @@
 
 To request an account on Charlie, please download and complete the Account Request Form in Storage &gt; Resources &gt; IT &gt; Forms. If you do not have access to storage, please email [helpdesk@bigelow.org](mailto:helpdesk@bigelow.org) to request a form. Once your request has been approved and the account created, you will receive an email with your username and a temporary password. You will be prompted to change this password the first time that you log in.
 
-### Connecting to Charlie
-
-#### MacOS and Linux
-
-Open a terminal application \(Mac: /Applications/Utilities/Terminal\)
-
-Use ssh to securely log into the Charlie front end \(cfe\):  
-`ssh username@cfe.bigelow.org`  
-\(this can be shortened to `ssh cfe` if your username on cfe is the same as on your computer and if you are using Bigelow's DNS server.\)
-
-#### Windows
-
-There are two options for connecting to Charlie using a Windows computer:  
-**PuTTY** Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).  
-**Web portal** Open your web browser and go to [https://cfe.bigelow.org/shell/](https://cfe.bigelow.org/shell/)
-
 ### Using Charlie
 
 Code is not run directly on cfe, which has very limited resources. Rather jobs are submitted to Charlie's nodes \(e.g. c1, c2, and c3\) using the [PBS Pro job scheduler](https://github.com/BigelowLab/charlie/wiki/PBS-on-Charlie). Only basic programs and utilities are installed on the nodes themselves. To use software packages that are not installed locally \(or a different version than what is installed locally\) you will use [environment modules](https://github.com/BigelowLab/charlie/wiki/modules).
@@ -35,4 +19,6 @@ Code is not run directly on cfe, which has very limited resources. Rather jobs a
 ### Troubleshooting
 
 There is an active community of Charlie users on the [Bigelow Slack workspace](https://bigelowlab.slack.com/). Channels include: \#comp-charlie and \#comp-code. Please post questions there before emailing [helpdesk@bigelow.org](mailto:helpdesk@bigelow.org).
+
+
 
