@@ -21,7 +21,7 @@ Routing queues automatically put your job into the appropriate queue based on th
 | scgc-route | scgc-normal |  |  | 2w | 100 |  | c2,c3 |
 | scgc-route | scgc-long |  |  | 6w | 100 | restricted | c2,c3 |
 |  | scgc-high |  |  | 2w | 150 | restricted | c2,c3 |
-|  | scgc-low |  |  | 8h | 10 |  | c2,c2,c3 |
+|  | scgc-low |  |  | 8h | 10 |  | c1,c2,c3 |
 |  | scgc-devel | 8 | 8 GB | 8h | 300 |  | c2,c3 |
 {% endtab %}
 {% endtabs %}
