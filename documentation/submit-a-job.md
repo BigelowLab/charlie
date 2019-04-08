@@ -18,7 +18,9 @@ Start a script:
 
 To submit a job using a shell script, include the arguments/options \(below\) at the beginning of the script, using the \#PBS prefix. Normally in a shell script, anything after a hash \(\#\) is a comment, however \#PBS is a special operator that specifies PBS options. To run your script \(example below\) use `qsub /path/to/script.sh`.
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="example.sh" %}
+```bash
 #!/opt/pbs/bin/qsub
 
 #PBS -N test   # name
@@ -31,8 +33,10 @@ To submit a job using a shell script, include the arguments/options \(below\) at
 # Load modules
 module use /mod/bigelow
 module load R
-...
+# etc...
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## Options
 
@@ -63,13 +67,24 @@ Specify the system resources that you need using the -l select option.
 | `mem` | Memory \(RAM\) | `qsub -l mem=4GB` |
 | `model` | Model \(e.g. c1, c2, c3\) | `qsub -l model=c1` |
 | `walltime` | Walltime \(HH,MM,SS\) | `qsub -l walltime=05:00:00` |
+| `select` | Nodes\* \(see below\) | `qsub -l select=1` |
 
 Resource requests can be combined using commas between. You can use any combination as long as it starts with a select.
 
 E.g. Start a job with 2 cpus and 4GB memory \(RAM\) that will run on a node in the c3 cluster in under 5 hours:
 
-```text
+```bash
 qsub -l ncpus=2,mem=4GB,walltime=05:00:00,model=c3
+```
+
+#### \*Nodes
+
+c1 and c2 are shared memory systems, so you do not need to use the select argument. c3 is a cluster of nodes with 24 cpus and 32GB of memory each. To use more than one node on c3, use the select argument. Note that parameters are separated with colons instead of commas.
+
+E.g. to request 3 nodes, each with 24 CPUs and 30GB of memory:
+
+```text
+qsub -l select=3:ncpus=24:mem=30
 ```
 
 ## Examples
