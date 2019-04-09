@@ -52,12 +52,13 @@ Use the following options when using qsub to customize the job parameters and se
 | `-M` | Email address \(can be comma separated list\) | `qsum -M uname@bigelow.org` |
 | `-N` | Name of job | `qsub -N Example` |
 | `-o` | Output directories | `qsub -o /home/<username>/out` |
-| `-q` | Queue | `qsub -q low` |
+| `-q` | Queue \(see [queue list](../topology-and-queues.md)\) | `qsub -q low` |
 | `-V` | Pass environment variables with job | `qsub -V` |
+| `-X` | Use X-Window for GUI applications \(should be used with interactive jobs; `-I`\) | `qsub -X -I` |
 
 More options can be found by typing `man qsub`
 
-### List of job requirements \(-l\)
+## List of job requirements \(`-l`\)
 
 Specify the system resources that you need using the -l select option.
 
@@ -89,21 +90,26 @@ qsub -l select=3:ncpus=24:mem=30
 
 ## Examples
 
-Submit interactive job:
+```yaml
+# Request interactive job
+qsub -I -l ncpus=1,mem=1gb
 
-`qsub -I -q route -l ncpus=1,mem=1gb`
+# Request interactive job on c1
+qsub -I -l ncpus=1,mem=1gb,model=c1
 
-Run command on Charlie:
+# Request interactive job with X Window (GUI) support
+qsub -I -X -l ncpus=1,mem=1gb
 
-`qsub -q route -l ncpus=1,mem=1gb -- command`
+# Run command using high priority queue
+qsub -q high -l ncpus=1,mem=1gb -- command
 
-Run PBS submission script
+# Run PBS submission script
+qsub /path/to/script.sh
+```
 
-`qsub /path/to/script.sh`
+## Related docs
 
-### Example scripts
+{% page-ref page="job-status.md" %}
 
-* [Example Basic Submission Script](https://github.com/BigelowLab/charlie/blob/master/Examples/basic_submission.sh)
-* [Submit Multiple Jobs Using Arrays](https://github.com/BigelowLab/charlie/blob/master/Examples/multiple_jobs.sh)
-* [Submission Script with Email Notifications](https://github.com/BigelowLab/charlie/blob/master/Examples/email_example.sh)
+{% page-ref page="delete-a-job.md" %}
 
