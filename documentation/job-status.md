@@ -1,28 +1,53 @@
 # Job status
 
-### View Job Status with `qstat`
+### Job Status
 
-We can monitor how our submitted jobs are progressing by typing `qstat` on the command line. This will generate a table similar to the one below. Here the user vcc is running the submission script script\_name four times. In the status \(S\) column, two jobs are marked with E, meaning that the job has finished. The third job, 792.cfe1, is marked with R, indicating that it is running, while the fourth job marked Q is waiting to be run in the normal Queue.
+To see all jobs on Charlie \(running and queued\), use the `qstat -a` command \(`/opt/pbs/bin/qstat`\). It will generate a table with the job id, name, user, and resource requests \(nodes, cpus/tsk, memory, time\).
 
-```text
-Job id            Name             User              Time Use S Queue
-----------------  ---------------- ----------------  -------- - -----
-790.cfe1          script_name      vcc               00:00:00 E normal          
-791.cfe1          script_name      vcc               00:00:00 E normal          
-792.cfe1          script_name      vcc               00:00:00 R normal 
-793.cfe1          script_name      vcc               00:00:00 Q normal 
+| Option | Description |
+| :--- | :--- |
+| `-1` | Add as last argument to keep each job to one line \(used with `-n` and `-s`\) |
+| `-a` | Show additional information, including requested resources |
+| `-f <job id>` | Shows full information about job |
+| `-n` | Show node that job is running on \(if used with `-a`, use `-n` _after_ `-a`\) |
+| `-p` | Show percentage complete instead of time used column \(cannot be used with `-a`\) |
+| `-q` | Show all queues and the total requested resources for all jobs in each queue \(do not use with other options\) |
+| `-s` | Show job start time, node, cpus, and memory for running jobs. Use with `-1` to display output on one line per job |
+| `-T` | Show estimated start time instead of elapsed time |
+| `-u <username>` | Show jobs for a specific user |
+| `-w` | Use wider fields \(up to 8 characters wide instead of 4\) |
+
+The status column uses one letter to represent the status of a job. Use the table below to as a reference.
+
+| Status | Description |
+| :--- | :--- |
+| `E` | Exiting after having run |
+| `F` | Finished |
+| `H` | Held |
+| `Q` | Queued |
+| `R` | Running |
+| `S` | Suspended \(contact admin to resume\) |
+| `W` | Waiting for submitter-assigned start time to be reached |
+| `X` | Completed execution or has been deleted |
+
+### Examples
+
+```bash
+# Show job status and requested resources
+qstat -a
+
+# In addition to qstat -a output, shows which node a job is running on
+qstat -an1
+
+# Show all queues and the total requested resources for all jobs in each queue
+qstat -q
+
+# Show all jobs for user hbigelow
+qstat -u hbigelow
+
+# Show all information for job with job id 123456
+qstat -f 123456
 ```
 
-The simple `qstat`command above provides useful basic information about the status and time used for each job submitted. More detailed information is provided with the command `qstat -a` :
 
-```text
-cfe1: 
-                                                            Req'd  Req'd   Elap
-Job ID          Username Queue    Jobname            SessID NDS TSK Memory Time  S Time
---------------- -------- -------- ------------       ------ --- --- ------ ----- - -----
-790.cfe1        vcc      normal    script_name        6022   1   1    2gb 00:10  E 00:00
-791.cfe1        vcc      normal    script_name        6023   1   1    2gb 00:10  E 00:00
-792.cfe1        vcc      normal    script_name        6024   1   1    2gb 00:10  R 00:00
-793.cfe1        vcc      normal    script_name        6025   1   1    2gb 00:10  Q 00:00
-```
 

@@ -91,15 +91,15 @@ qsub -l select=3:ncpus=24:mem=30
 
 Submit interactive job:
 
-`qsub -I -q route -lselect=1:ncpus=1:mem=1gb`
+`qsub -I -q route -l ncpus=1,mem=1gb`
 
-Run command on charlie:
+Run command on Charlie:
 
-`qsub -q route -lselect=1:ncpus=1:mem=1gb -- command`
+`qsub -q route -l ncpus=1,mem=1gb -- command`
 
 Run PBS submission script
 
-`qsub script.sh`
+`qsub /path/to/script.sh`
 
 ### Example scripts
 
