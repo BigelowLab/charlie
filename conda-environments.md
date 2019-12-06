@@ -31,4 +31,8 @@ source activate ~/my_env
 conda install -c bioconda bamm
 ```
 
-And then whenever you wanted to run bamm, you would just have to make sure that you've loaded your conda environment.
+And then whenever you wanted to run bamm, you would just have to make sure that you've loaded your conda environment by typing:  
+```
+module load anaconda3
+source activate ~/my_env
+```
