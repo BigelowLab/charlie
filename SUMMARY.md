@@ -9,6 +9,7 @@
   * [Alter and delete jobs](documentation/delete-a-job.md)
   * [Interactive jobs](documentation/interactive-jobs.md)
 * [Software Modules](software-modules.md)
+* [Conda Environments](conda-environments.md)
 * [Data Science](data-science/README.md)
   * [Jupyter Notebooks](data-science/jupyter-notebooks.md)
 * [Bioinformatics](bioinformatics/README.md)
