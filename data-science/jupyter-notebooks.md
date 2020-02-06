@@ -50,9 +50,10 @@ Copy/paste this URL into your browser when you connect for the first time,
 
 Note the 'port' value in the URL.  Above it is '8888', but this could vary if others are also running notebooks on the server you're working on.
 
-#### 4. SSH tunnel the notebook to your local machine
+#### 4. SSH tunnel the notebook to your local machine  
+  
 
-**If you are running a notebook on c2, you can skip this step.**
+*If you are running a notebook on c2, you can skip this step.*
 
 If you are running a notebook from c1, on your local machine, open up a terminal (mac) or putty window (PC) and enter:
 
@@ -62,7 +63,10 @@ ssh -t -t julia@cfe -L 8888:localhost:8888 ssh julia@c1 -L 8888:localhost:8888
 
 Where you substitute the '8888' for whatever port value is used in the URL obtained in step 3, and you substitute 'julia' for your cfe username.
 
-This will log you into c1 directly.  Do not do anything in this terminal, just let it be while you are working with your notebook.  Close it when you are finished with your notebook session.
+This will log you into c1 directly.  Do not do anything in this terminal, just let it be while you are working with your notebook.  Close it when you are finished with your notebook session.  
+  
 
 #### 5. Copy and paste the URL from your notebook session into a browser on your local machine.
+
+In the above example you would copy "http://0.0.0.0:8888/?token=80fe1f77afaa12858979b67b6b43b4b6fdddfbcfd80d4acb", open your browser of choice, and paste it into the navigation bar.
 
