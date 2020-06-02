@@ -30,3 +30,7 @@ Routing queues automatically put your job into the appropriate queue based on th
 
 ![](.gitbook/assets/image.png)
 
+### Job scheduling
+
+When a job is submitted, if sufficient resources are idle, then the job will be run immediately. If not, then the job will be considered by the scheduler when a running job completes. When deciding which jobs to run, the scheduler will try to run high-priority jobs first. If a large, high-priority job requires resources that are currently unavailable, the scheduler will attempt to fill in smaller jobs provided they do not delay that large, high-priority job.
+
