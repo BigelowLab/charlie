@@ -18,8 +18,7 @@ Start a script:
 
 To submit a job using a shell script, include the arguments/options \(below\) at the beginning of the script, using the \#PBS prefix. Normally in a shell script, anything after a hash \(\#\) is a comment, however \#PBS is a special operator that specifies PBS options. To run your script \(example below\) use `qsub /path/to/script.sh`.
 
-{% code-tabs %}
-{% code-tabs-item title="example.sh" %}
+{% code title="example.sh" %}
 ```bash
 #!/opt/pbs/bin/qsub
 
@@ -35,8 +34,7 @@ module use /mod/bigelow
 module load R
 # etc...
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## Options
 
@@ -47,6 +45,7 @@ Use the following options when using qsub to customize the job parameters and se
 | `-a` | Start time \(`[[[[CC]YY]MM]DD]hhmm[.SS]` where `CC`=century, `YY`=year, `MM`=month, `DD`=day of the month, `hh`=hour, `mm`=minute, `SS`=seconds\) | `qsub -a 201901201000` |
 | `-e` | Error directories | `qsub -e /home/<username>/error` |
 | `-I` | Interactive | `qsub -I` |
+| `-J` | Range of job array \(`start-end[:step]`\) | `qsub -J 2-8:2` |
 | `-l` | Request options \(more below\) | `qsub -l ncpus=2,mem=4GB` |
 | `-m` | Email job status \(`b`=begin, `e`=end, `a`=abort\) | `qsub -m bea` |
 | `-M` | Email address \(can be comma separated list\) | `qsum -M uname@bigelow.org` |
@@ -87,6 +86,10 @@ E.g. to request 3 nodes, each with 24 CPUs and 30GB of memory:
 ```text
 qsub -l select=3:ncpus=24:mem=30
 ```
+
+## A note on job arrays \(`-J`\)
+
+Job arrays are a way to efficiently organize and submit multiple similar jobs. The PBS scheduler treats each sub-job in the job array as an individual job in the queue specified by the job array. Since job arrays are often large and can take up a significant amount of resources, we recommend submitting them to the low priority queue, so that other individual jobs can still be scheduled in the meantime.
 
 ## Examples
 
