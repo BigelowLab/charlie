@@ -12,6 +12,7 @@
 * [Conda Environments](conda-environments.md)
 * [Data Science](data-science/README.md)
   * [Jupyter Notebooks](data-science/jupyter-notebooks.md)
+  * [RStudio](data-science/rstudio.md)
 * [Bioinformatics](bioinformatics/README.md)
   * [AAI Calculation](bioinformatics/aai-calculation.md)
   * [ANI Calculation](bioinformatics/ani-calculation.md)
