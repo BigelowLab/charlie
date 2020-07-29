@@ -1,20 +1,24 @@
 # Jupyter Notebooks
 
-#### 1. Start an interactive session on c1 or c2:
+## 0. Connect to Bigelow's VPN
 
-For c1:
+## 1. Start an interactive session
 
-```text
-qsub -I -q route -l walltime=8:00:00 -l ncpus=5,mem=32G -N jupyter-interactive
-```
-
-for c2:
+For c1 or c3:
 
 ```text
-qsub -I -V -q scgc-route -l walltime=8:00:00 -l ncpus=2,mem=32G  -N jupyter-interactive
+qsub -I -q route -l walltime=8:00:00 -l ncpus=2,mem=16G -N jupyter-interactive
 ```
 
-#### 2. Navigate to your notebooks directory, set up environment:
+Use an additional `-l model=<model>` option if the user wants to specifically use c1 or c3.
+
+For c2:
+
+```text
+qsub -I -V -q scgc-route -l walltime=8:00:00 -l ncpus=2,mem=32G -N jupyter-interactive
+```
+
+## 2. Navigate to your notebooks directory, set up environment:
 
 Run:
 
@@ -24,49 +28,63 @@ module load anaconda3
 unset XDG_RUNTIME_DIR
 ```
 
-#### 3. Start a jupyter notebook session
+## 3. Determine the IP address of the compute nodes
 
 Run:
 
-On c2:
-
 ```text
-jupyter notebook --no-browser --port=8888 --ip=10.2.1.61
+cat /etc/hostname
 ```
 
-On c1:
+The hostname should be displayed. Then, using the table below, find out the IP address of the machine:
+
+| Hostname | IP address |
+| :--- | :--- |
+| c1 | 10.10.1.1 |
+| c2 | 10.2.1.61 |
+| c3-0 | 10.2.13.0 |
+| c3-1 | 10.2.13.1 |
+| c3-2 | 10.2.13.2 |
+| c3-3 | 10.2.13.3 |
+| c3-4 | 10.2.13.4 |
+| c3-5 | 10.2.13.5 |
+| c3-6 | 10.2.13.6 |
+| c3-7 | 10.2.13.7 |
+| c3-8 | 10.2.13.8 |
+| c3-9 | 10.2.13.9 |
+| c3-10 | 10.2.13.10 |
+| c3-11 | 10.2.13.11 |
+| c3-12 | 10.2.13.12 |
+| c3-13 | 10.2.13.13 |
+| c3-14 | 10.2.13.14 |
+
+Alternatively, use the `ifconfig` command to find out the IP address.
+
+## 4. Start a jupyter notebook session
+
+Run:
 
 ```text
-jupyter notebook --no-browser 
+jupyter notebook --no-browser --port=<port> --ip=<ip address>
+```
+
+The port can be in the range of 8888-8898. The ip address is the IP found in the previous step. For example, if you are in c1, to start a session, run:
+
+```text
+jupyter notebook --no-browser --port=8888 --ip=10.10.1.1
 ```
 
 You should get ouput that looks like this:
 
-```
+```text
 Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
-        http://0.0.0.0:8888/?token=80fe1f77afaa12858979b67b6b43b4b6fdddfbcfd80d4acb
+        http://10.10.1.1:8888/?token=3258d683aae77486e9880349b0c61b2412f32ae787a9463b
 ```
 
-Note the 'port' value in the URL.  Above it is '8888', but this could vary if others are also running notebooks on the server you're working on.
+Note the 'port' value in the URL. Above it is '8888', but this could vary if others are also running notebooks on the server you're working on.
 
-#### 4. SSH tunnel the notebook to your local machine  
-  
+## 5. Copy and paste the URL from your notebook session into a browser on your local machine.
 
-*If you are running a notebook on c2, you can skip this step.*
-
-If you are running a notebook from c1, on your local machine, open up a terminal (mac) or putty window (PC) and enter:
-
-```
-ssh -t -t julia@cfe -L 8888:localhost:8888 ssh julia@c1 -L 8888:localhost:8888
-```
-
-Where you substitute the '8888' for whatever port value is used in the URL obtained in step 3, and you substitute 'julia' for your cfe username.
-
-This will log you into c1 directly.  Do not do anything in this terminal, just let it be while you are working with your notebook.  Close it when you are finished with your notebook session.  
-  
-
-#### 5. Copy and paste the URL from your notebook session into a browser on your local machine.
-
-In the above example you would copy "http://0.0.0.0:8888/?token=80fe1f77afaa12858979b67b6b43b4b6fdddfbcfd80d4acb", open your browser of choice, and paste it into the navigation bar.
+In the above example you would copy "[http://10.10.1.1:8888/?token=3258d683aae77486e9880349b0c61b2412f32ae787a9463b](http://10.10.1.1:8888/?token=3258d683aae77486e9880349b0c61b2412f32ae787a9463b)", open your browser of choice, and paste it into the navigation bar.
 

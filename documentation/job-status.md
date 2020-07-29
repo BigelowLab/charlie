@@ -8,17 +8,14 @@ To see all jobs on Charlie \(running and queued\), use the `qstat -a` command \(
 | :--- | :--- |
 | `-1` | Add as last argument to keep each job to one line \(used with `-n` and `-s`\) |
 | `-a` | Show additional information, including requested resources |
-| `-f <job id>` | Show full information about job |
-| `-J` | Limit status information to job arrays. |
+| `-f <job id>` | Shows full information about job |
 | `-n` | Show node that job is running on \(if used with `-a`, use `-n` _after_ `-a`\) |
 | `-p` | Show percentage complete instead of time used column \(cannot be used with `-a`\) |
 | `-q` | Show all queues and the total requested resources for all jobs in each queue \(do not use with other options\) |
 | `-s` | Show job start time, node, cpus, and memory for running jobs. Use with `-1` to display output on one line per job |
-| `-t` | Show status information for jobs, job arrays, and sub‐ jobs |
 | `-T` | Show estimated start time instead of elapsed time |
 | `-u <username>` | Show jobs for a specific user |
 | `-w` | Use wider fields \(up to 8 characters wide instead of 4\) |
-| `-x` | Show status information for finished and moved jobs |
 
 The status column uses one letter to represent the status of a job. Use the table below to as a reference.
 
