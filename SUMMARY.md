@@ -8,6 +8,7 @@
   * [Job status](documentation/job-status.md)
   * [Alter and delete jobs](documentation/delete-a-job.md)
   * [Interactive jobs](documentation/interactive-jobs.md)
+* [Monitor Charlie](monitor-charlie.md)
 * [Software Modules](software-modules.md)
 * [Conda Environments](conda-environments.md)
 * [Data Science](data-science/README.md)
