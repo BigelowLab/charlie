@@ -26,4 +26,5 @@
   * [VirSorter](bioinformatics/virsorter.md)
   * [Other Bioinformatics Software](bioinformatics/other-bioinformatics-software.md)
 * [FAQ](faq.md)
+* [SSH Passthrough](ssh-passthrough.md)
 
