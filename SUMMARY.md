@@ -2,6 +2,8 @@
 
 * [Charlie Overview](README.md)
 * [Getting Started](getting-started.md)
+* [Connect & Transfer](connect-and-transfer/README.md)
+  * [SSH Passthrough](connect-and-transfer/ssh-passthrough.md)
 * [Topology and Queues](topology-and-queues.md)
 * [Job submission](documentation/README.md)
   * [Submit a job](documentation/submit-a-job.md)
@@ -26,5 +28,4 @@
   * [VirSorter](bioinformatics/virsorter.md)
   * [Other Bioinformatics Software](bioinformatics/other-bioinformatics-software.md)
 * [FAQ](faq.md)
-* [SSH Passthrough](ssh-passthrough.md)
 
