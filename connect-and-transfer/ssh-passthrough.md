@@ -73,3 +73,9 @@ Host cfe
 
 Setting up SSH passthrough may be complicated, but it is worth doing to save time in the future.
 
+#### More information
+
+[https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough\_232.html](https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough_232.html)
+
+[https://www.redhat.com/sysadmin/ssh-proxy-bastion-proxyjump](https://www.redhat.com/sysadmin/ssh-proxy-bastion-proxyjump)
+
