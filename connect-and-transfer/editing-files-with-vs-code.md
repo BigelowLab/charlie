@@ -42,7 +42,7 @@ Select a folder on Charlie that you want to edit files in. VS Code will download
 
 Repeat the last two steps for multiple folders 
 
+#### More information
 
-
-
+[https://artisansweb.net/ftp-sftp-extension-for-visual-studio-code/](https://artisansweb.net/ftp-sftp-extension-for-visual-studio-code/)
 
