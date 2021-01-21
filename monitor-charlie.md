@@ -42,7 +42,7 @@ c3-14
 
 ### Jobs
 
-As mentioned in the [Job status](documentation/job-status.md) page, the `qstat` command offers a variety of ways to monitor the jobs that are running. For details on the available options and possible job status, please refer to the [Job status](documentation/job-status.md) page. Here, we describe some common, useful commands.
+As mentioned in the [Job status](job-submission/job-status.md) page, the `qstat` command offers a variety of ways to monitor the jobs that are running. For details on the available options and possible job status, please refer to the [Job status](job-submission/job-status.md) page. Here, we describe some common, useful commands.
 
 We created a shortcut command `qwatch`, which calls `qstat -an1` every second, so it creates an real-time view of the status of the jobs in Charlie:
 
