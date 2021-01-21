@@ -1,10 +1,10 @@
 # Table of contents
 
 * [Charlie Overview](README.md)
-* [Getting Started](getting-started.md)
 * [Connect & Transfer](connect-and-transfer/README.md)
-  * [Transfer files to Charlie](connect-and-transfer/transfer-files-to-charlie.md)
+  * [Connecting to Charlie](connect-and-transfer/connecting.md)
   * [SSH Passthrough](connect-and-transfer/ssh-passthrough.md)
+  * [Transfer files to Charlie](connect-and-transfer/transfer-files-to-charlie.md)
 * [Topology and Queues](topology-and-queues.md)
 * [Job submission](job-submission/README.md)
   * [Submit a job](job-submission/submit-a-job.md)

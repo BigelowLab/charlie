@@ -1,4 +1,4 @@
-# Getting Started
+# Connecting to Charlie
 
 ### Connecting to Charlie
 
