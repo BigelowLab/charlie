@@ -2,6 +2,10 @@
 
 SSH passthrough allows you to skip the two-step login process, enabling you to transfer files directly from your computer to cfe.
 
+{% hint style="info" %}
+This article is adapted from NASA's NAS documentation here: [https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough\_232.html](https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough_232.html) Charlie uses the same system structure as NAS, just substitute CFE \(Charlie Front End\) when they use PFE \(Pleiades Front End\). Also, we do not currently use multiple SFE/CFE hosts \(e.g. cfe1, cfe 2\).
+{% endhint %}
+
 ## Setting up SSH passthrough
 
 #### Step 1: Copy OpenSSH public key to host.
@@ -77,5 +81,52 @@ Host *.bigelow.org cfe
 
 ```
 
+{% hint style="danger" %}
+**WARNING:** Your .ssh/config file should be set with no group~~**/**~~others write permission. Otherwise, you will get this error message when you connect: **Bad owner or permissions on /u/your\_local\_username/.ssh/config.**
+{% endhint %}
 
+#### Step 3: Set Up SSH Agent
+
+The ssh-agent program holds and manages the private key on your local system and responds to key challenges from remote hosts. The private key is not initially stored in the agent and is added through the ssh-add program.
+
+Typically, ssh-agent is started at the beginning of an X session or a login session, and you provide your passphrase to unlock your private key for this originating session. For any SSH connection to a remote host \(e.g. sfe\) made from this original session, the ssh-agent remembers your private key and will respond to challenges automatically without prompting you to type in your passphrase again.
+
+How SSH passthrough works: If you want to use SSH to connect from the first remote host \(e.g. SFE\) to a second remote host \(e.g. cfe\) and possibly from the second remote host to a third remote host, a feature called agent forwarding allows a chain of SSHconnections to forward all the key challenges back to the original agent, thus eliminating the need for using a password or public/private keys for these connections.
+
+Note: In order for agent forwarding to work, your public key must be installed in all the remote hosts that you intend to connect to. \(See Step 1.\)
+
+Run one of the following command lines to launch ssh-agent:
+
+* **For csh or tcsh:**
+
+  ```text
+  your_local_system% eval `ssh-agent -c` 
+  ```
+
+* **For sh or bash:**
+
+  ```text
+  your_local_system% eval `ssh-agent -s`
+  ```
+
+  If the bash command line shown above results in error, try running this one instead:
+
+  ```text
+  your_local_system% eval "$(ssh-agent -s)"
+  ```
+
+To add your private key to ssh-agent, run:
+
+```text
+your_local_system% ssh-add private_key
+```
+
+Example:
+
+```text
+your_local_system% ssh-add ~/.ssh/id_rsa
+Enter passphrase for /Users/username/.ssh/id_rsa: type your passphrase
+```
+
+Setting up SSH passthrough may be complicated, but it is worth doing to save time in the future.
 
