@@ -5,6 +5,7 @@
   * [Connecting to Charlie](connect-and-transfer/connecting.md)
   * [SSH Passthrough](connect-and-transfer/ssh-passthrough.md)
   * [Transfer files to Charlie](connect-and-transfer/transfer-files-to-charlie.md)
+  * [Editing files with VS Code](connect-and-transfer/editing-files-with-vs-code.md)
 * [Topology and Queues](topology-and-queues.md)
 * [Job submission](job-submission/README.md)
   * [Submit a job](job-submission/submit-a-job.md)
