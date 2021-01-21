@@ -3,6 +3,7 @@
 * [Charlie Overview](README.md)
 * [Getting Started](getting-started.md)
 * [Connect & Transfer](connect-and-transfer/README.md)
+  * [Transfer files to Charlie](connect-and-transfer/transfer-files-to-charlie.md)
   * [SSH Passthrough](connect-and-transfer/ssh-passthrough.md)
 * [Topology and Queues](topology-and-queues.md)
 * [Job submission](documentation/README.md)
