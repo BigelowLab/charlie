@@ -7,7 +7,7 @@ description: >-
 # SSH Passthrough
 
 {% hint style="info" %}
-This article is adapted from NASA's NAS documentation here: [https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough\_232.html](https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough_232.html) Charlie uses the same system structure as NAS, just substitute CFE \(Charlie Front End\) when they use PFE \(Pleiades Front End\). Also, we do not currently use multiple SFE/CFE hosts \(e.g. cfe1, cfe 2\).
+This article is adapted from NASA's NAS documentation here: [https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough\_232.html](https://www.nas.nasa.gov/hecc/support/kb/setting-up-ssh-passthrough_232.html) Charlie uses the same system structure as NAS, just substitute CFE \(Charlie Front End\) when they use PFE \(Pleiades Front End\). Also, we do not currently use multiple SFE/CFE hosts \(e.g. cfe1, cfe2\).
 {% endhint %}
 
 ## Setting up SSH passthrough
