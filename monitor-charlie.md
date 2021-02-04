@@ -21,24 +21,7 @@ REQUESTED RESOURCES BY NODE
 c3-14    0/24   0%      0/31   0%     0
 ```
 
-The command also offers other options. Option `-j` shows additionally the jobs that are running on the compute nodes. Option `-g` offers a graphical way to inspect the load of the nodes, as shown below. The options can also be used in combination.
-
-```text
--bash-4.2$ ctop -g
-REQUESTED RESOURCES BY NODE
-
-c1
-    CPU: 16/160                      ##########..........................................................................................(10%).
-    MEM: 100/1219gb                   ########............................................................................................(8%).
-    # of running jobs: 2
-...
-...
-...
-c3-14
-    CPU: 0/24                         ....................................................................................................(0%).
-    MEM: 0/31gb                       ....................................................................................................(0%).
-    # of running jobs: 0
-```
+The command also offers other options. Option `-j` shows additionally the jobs that are running on the compute nodes.
 
 ### Jobs
 
