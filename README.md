@@ -5,7 +5,7 @@
 **cfe:** Charlie front end - where jobs are submitted  
 **c1:** UV2000 - 160 cores \(Intel Xeon E7-4640, 2.1GHz \(2.60GHz turbo\), 40MB cache, 12 cores, 24 threads\), 1.25TB memory  
 **c2:** UV300 - 128 cores \(Intel Xeon E7-4850, 2.1GHz \(2.80GHz turbo\), 30MB cache, 16 cores, 32 threads\), 2TB memory \(\* limited to SCGC/Stepanauskas group\)  
-**c3:** Dell R610 stack \(15 nodes, each with 12 cores \(2 Intel Xeon X5650, 2.67GHz, 6 cores, 12 threads\), 31GB memory\)  
+**c3:** Dell R610 stack \(15 nodes, each with 12 cores \[2 Intel Xeon X5650, 2.67GHz, 6 cores, 12 threads\], 62GB memory\)  
 **cdata:** SGI NetApp storage cluster on c2
 
 ### Requesting an account
