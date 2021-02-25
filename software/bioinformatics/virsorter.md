@@ -1,7 +1,9 @@
 # VirSorter
 
-Update 2/25/2021  
-I've installed the latest version of virsorter2.  To use:  
+## VirSorter2  
+Updated 2/25/2021  
+
+To use:  
 
 ```text
 module use /mod/scgc/
@@ -18,7 +20,7 @@ virsorter run --help
 
 All underlying databases have been installed, and it should run smoothly.  
 
-To run the original version of virsorter:
+## Original VirSorter
 
 ```text
 module use /mod/scgc/
