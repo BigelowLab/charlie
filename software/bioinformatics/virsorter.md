@@ -1,17 +1,36 @@
 # VirSorter
 
-Modules and env to run virsorter:
+Update 2/25/2021  
+I've installed the latest version of virsorter2.  To use:  
 
 ```text
+module use /mod/scgc/
 module unload anaconda
-module load anaconda3
+module load anaconda3/2019.07
+module load vs2
+```
+
+For instructions on how to run:  
+
+```text
+virsorter run --help
+```
+
+All underlying databases have been installed, and it should run smoothly.  
+
+To run the original version of virsorter:
+
+```text
+module use /mod/scgc/
+module unload anaconda
+module load anaconda3/2019.07
 module load virsorter
 module load mga
 
 source activate virsorter
 ```
 
-To get instructions:
+For instructions:
 
 ```text
 julia at c1 in /mnt/scgc_nfs/lab/julia/virsorter_tests
@@ -47,5 +66,5 @@ Usage:
       --help         Show help and exit
 ```
 
-You may have to specify the data-dir to get it to work. You can use this one: /mnt/scgc\_nfs/ref/virsorter/virsorter-data/ which was the latest version of the database as of May, 2018
+You may have to specify the data-dir to get it to work. Use this one: /mnt/scgc\_nfs/ref/virsorter/virsorter-data/ which was the latest version of the database as of May, 2018
 
