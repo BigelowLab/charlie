@@ -1,4 +1,4 @@
-# VirSorter
+# Software for Virus Searching and QC
 
 ## VirSorter2  
 Updated 2/25/2021  
@@ -70,3 +70,110 @@ Usage:
 
 You may have to specify the data-dir to get it to work. Use this one: /mnt/scgc\_nfs/ref/virsorter/virsorter-data/ which was the latest version of the database as of May, 2018
 
+## Vibrant
+
+```
+module use /mod/scgc/
+module load anaconda3
+source activate vibrant
+
+VIBRANT_run.py --help
+
+usage: VIBRANT_run.py [-h] [--version] -i I [-f {prot,nucl}] [-folder FOLDER]
+                      [-t T] [-l L] [-o O] [-virome] [-no_plot] [-d D] [-m M]
+
+Usage: VIBRANT_run.py -i <input_file> [options]. VIBRANT identifies bacterial
+and archaeal viruses (phages) from assembled metagenomic scaffolds or whole
+genomes, including the excision of integrated proviruses. VIBRANT also
+performs curation of identified viral scaffolds, estimation of viral genome
+completeness and analysis of viral metabolic capabilities.
+
+optional arguments:
+  -h, --help      show this help message and exit
+  --version       show program's version number and exit
+  -i I            input fasta file
+  -f {prot,nucl}  format of input [default="nucl"]
+  -folder FOLDER  path to deposit output folder and temporary files, will
+                  create if doesn't exist [default= working directory]
+  -t T            number of parallel VIBRANT runs, each occupies 1 CPU
+                  [default=1, max of 1 CPU per scaffold]
+  -l L            length in basepairs to limit input sequences [default=1000,
+                  can increase but not decrease]
+  -o O            number of ORFs per scaffold to limit input sequences
+                  [default=4, can increase but not decrease]
+  -virome         use this setting if dataset is known to be comprised mainly
+                  of viruses. More sensitive to viruses, less sensitive to
+                  false identifications [default=off]
+  -no_plot        suppress the generation of summary plots [default=off]
+  -d D            path to original "databases" directory that contains .HMM
+                  files (if moved from default location)
+  -m M            path to original "files" directory that contains .tsv and
+                  model files (if moved from default location)               
+```
+
+## DeepVirFinder
+
+```
+module use /mod/scgc/
+module load deepvirfinder/1.0
+module load anaconda3
+source activate dvf
+
+dvf.py --help
+Usage: dvf.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -i INPUT_FA, --in=INPUT_FA
+                        input fasta file
+  -m MODDIR, --mod=MODDIR
+                        model directory (default ./models)
+  -o OUTPUT_DIR, --out=OUTPUT_DIR
+                        output directory
+  -l CUTOFF_LEN, --len=CUTOFF_LEN
+                        predict only for sequence >= L bp (default 1)
+  -c CORE_NUM, --core=CORE_NUM
+                        number of parallel cores (default 1)
+```
+
+## CheckV
+
+```
+module use /mod/scgc/
+module load anaconda3
+source activate checkv
+
+checkv end_to_end --help
+Run full pipeline to estimate completeness, contamination, and identify closed genomes
+
+usage: checkv end_to_end <input> <output> [options]
+
+positional arguments:
+  input       Input nucleotide sequences in FASTA format
+  output      Output directory
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -d PATH     Reference database path. By default the CHECKVDB environment variable is used
+  -t INT      Number of threads to use for Prodigal and DIAMOND
+  --restart   Overwrite existing intermediate files. By default CheckV continues where program left
+              off
+  --quiet     Suppress logging messages
+```
+
+You will need to designate the database location.  On Charlie, it is located at: ```/mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/```  
+
+An example command would be:   
+```checkv end_to_end <in_fasta> <out_directory> -t <number_of_cores> -d /mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/```
+
+## VContact
+```
+module use /mod/scgc/
+module load anaconda3
+source activate vContact2
+
+vcontact2 --help
+```
+
+suggested parameters:  
+```--db 'ProkaryoticViralRefSeq94-Merged' --pcs-mode MCL --vcs-mode ClusterONE --c1-bin /mnt/scgc/scgc_nfs/opt/common/clusterone/1.0/cluster_one-1.0.jar```
