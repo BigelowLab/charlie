@@ -13,6 +13,21 @@ The above script requests a session on c1 lasting 1 hour and using 1 cpu. For mo
 
 Additionally we do not need to use a submission script for starting an interactive session. We may type the information necessary to start a session directly into the command line as follows: `qsub -I -l walltime=1:00:00 -l select=1:ncpus=1 -q level`. This command will produce the same results as described above.
 
+Some example interactive job command line scripts specific to charlie:
+
+For a 8 hour job that uses 5 cpus and 32G of memory:
+```
+qsub -I -q route -l walltime=8:00:00,ncpus=5,mem=32G  -N my-interactive-job
+```
+
+Say you want to specify which server you want your job to run on, use the `model` designator under the -l parameter. So for the same job as above, specifically run on c1:
+```
+qsub -I -q route -l walltime=8:00:00,ncpus=5,mem=32G,model=c1 -N my-interactive-job
+```
+
+For a full list of submission options, and job parameters see the [Submit a Job](https://charlie.bigelow.org/job-submission/submit-a-job) page.
+
+
 Once an interactive job has been submitted, PBS will print:
 
 ```text
