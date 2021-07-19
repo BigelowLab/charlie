@@ -36,6 +36,22 @@ module load R
 ```
 {% endcode %}
 
+## Submit a job from a script alternative
+
+Sometimes you may need to invoke a script from a script, such as using a cron job to watch a folder for the appearance of a file.  When a qualifying file appears, a script will kick of a downstream script to process the file.  In this case, you construct your script call as a string and then then a pipe to `qsub`.
+
+{% code title="example-alternative.sh" %}
+```bash
+QSUBAPP=/opt/pbs/bin/qsub
+QSUB_STUFF="${QSUBAPP} -N example-alternative -q route -l ncpus=1,mem=64GB,walltime=48:00:00 -j oe"
+MODULE_STUFF="module use /mod/scgc; module load R"
+SCRIPT_STUFF="Rscript /path/to/example-alternative-Rscript.R /path/to/file"
+
+# note the quoting
+echo "${MODULE_STUFF}; ${SCRIPT_STUFF}" | ${QSUB_STUFF}
+```
+{% endcode %}
+
 ## Options
 
 Use the following options when using qsub to customize the job parameters and select resources to request.
