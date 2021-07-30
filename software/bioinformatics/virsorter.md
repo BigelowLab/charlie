@@ -9,7 +9,7 @@ To use:
 module use /mod/scgc/
 module unload anaconda
 module load anaconda3/2019.07
-module load vs2
+source activate vs2
 ```
 
 For instructions on how to run:  
