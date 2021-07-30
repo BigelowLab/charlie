@@ -7,7 +7,6 @@ To use:
 
 ```text
 module use /mod/scgc/
-module unload anaconda
 module load anaconda3/2019.07
 source activate vs2
 ```
@@ -74,7 +73,7 @@ You may have to specify the data-dir to get it to work. Use this one: /mnt/scgc\
 
 ```
 module use /mod/scgc/
-module load anaconda3
+module load anaconda3/2019.07
 source activate vibrant
 
 VIBRANT_run.py --help
@@ -116,7 +115,7 @@ optional arguments:
 ```
 module use /mod/scgc/
 module load deepvirfinder/1.0
-module load anaconda3
+module load anaconda3/2019.07
 source activate dvf
 
 dvf.py --help
@@ -140,7 +139,7 @@ Options:
 
 ```
 module use /mod/scgc/
-module load anaconda3
+module load anaconda3/2019.07
 source activate checkv
 
 checkv end_to_end --help
@@ -169,7 +168,7 @@ An example command would be:
 ## VContact
 ```
 module use /mod/scgc/
-module load anaconda3
+module load anaconda3/2019.07
 source activate vContact2
 
 vcontact2 --help
