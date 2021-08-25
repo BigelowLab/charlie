@@ -1,9 +1,10 @@
-# Software for Virus Searching and QC
+# VirSorter
 
-## VirSorter2  
-Updated 2/25/2021  
+## VirSorter2
 
-To use:  
+Updated 2/25/2021
+
+To use:
 
 ```text
 module use /mod/scgc/
@@ -11,13 +12,13 @@ module load anaconda3/2019.07
 source activate vs2
 ```
 
-For instructions on how to run:  
+For instructions on how to run:
 
 ```text
 virsorter run --help
 ```
 
-All underlying databases have been installed, and it should run smoothly.  
+All underlying databases have been installed, and it should run smoothly.
 
 ## Original VirSorter
 
@@ -71,7 +72,7 @@ You may have to specify the data-dir to get it to work. Use this one: /mnt/scgc\
 
 ## Vibrant
 
-```
+```text
 module use /mod/scgc/
 module load anaconda3/2019.07
 source activate vibrant
@@ -107,12 +108,12 @@ optional arguments:
   -d D            path to original "databases" directory that contains .HMM
                   files (if moved from default location)
   -m M            path to original "files" directory that contains .tsv and
-                  model files (if moved from default location)               
+                  model files (if moved from default location)
 ```
 
 ## DeepVirFinder
 
-```
+```text
 module use /mod/scgc/
 module load deepvirfinder/1.0
 module load anaconda3/2019.07
@@ -137,7 +138,7 @@ Options:
 
 ## CheckV
 
-```
+```text
 module use /mod/scgc/
 module load anaconda3/2019.07
 source activate checkv
@@ -160,13 +161,14 @@ optional arguments:
   --quiet     Suppress logging messages
 ```
 
-You will need to designate the database location.  On Charlie, it is located at: ```/mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/```  
+You will need to designate the database location. On Charlie, it is located at: `/mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/`
 
-An example command would be:   
-```checkv end_to_end <in_fasta> <out_directory> -t <number_of_cores> -d /mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/```
+An example command would be:  
+`checkv end_to_end <in_fasta> <out_directory> -t <number_of_cores> -d /mnt/scgc/scgc_nfs/ref/checkv/checkv-db-v1.0/`
 
 ## VContact
-```
+
+```text
 module use /mod/scgc/
 module load anaconda3/2019.07
 source activate vContact2
@@ -175,4 +177,5 @@ vcontact2 --help
 ```
 
 suggested parameters:  
-```--db 'ProkaryoticViralRefSeq94-Merged' --pcs-mode MCL --vcs-mode ClusterONE --c1-bin /mnt/scgc/scgc_nfs/opt/common/clusterone/1.0/cluster_one-1.0.jar```
+`--db 'ProkaryoticViralRefSeq94-Merged' --pcs-mode MCL --vcs-mode ClusterONE --c1-bin /mnt/scgc/scgc_nfs/opt/common/clusterone/1.0/cluster_one-1.0.jar`
+

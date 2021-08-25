@@ -16,16 +16,18 @@ Additionally we do not need to use a submission script for starting an interacti
 Some example interactive job command line scripts specific to charlie:
 
 For a 8 hour job that uses 5 cpus and 32G of memory:
-```
+
+```text
 qsub -I -q route -l walltime=8:00:00,ncpus=5,mem=32G  -N my-interactive-job
 ```
 
 You may want to specify which server you want your job to run on. To do so, use the `model` designator under the -l option. So for the same job as above, specifically run on c1 the command would be:
-```
+
+```text
 qsub -I -q route -l walltime=8:00:00,ncpus=5,mem=32G,model=c1 -N my-interactive-job
 ```
 
-For a full list of submission options, and job parameters see the [Submit a Job](https://charlie.bigelow.org/job-submission/submit-a-job) page.  
+For a full list of submission options, and job parameters see the [Submit a Job](https://charlie.bigelow.org/job-submission/submit-a-job) page.
 
 Once an interactive job has been submitted, PBS will print:
 

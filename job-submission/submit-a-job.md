@@ -20,8 +20,6 @@ To submit a job using a shell script, include the arguments/options \(below\) at
 
 {% code title="example.sh" %}
 ```bash
-#!/opt/pbs/bin/qsub
-
 #PBS -N test   # name
 #PBS -q route
 #PBS -V        # copy environment variables
@@ -38,7 +36,7 @@ module load R
 
 ## Submit a job from a script alternative
 
-Sometimes you may need to invoke a script from a script, such as using a cron job to watch a folder for the appearance of a file.  When a qualifying file appears, a script will kick of a downstream script to process the file.  In this case, you construct your script call as a string and then then a pipe to `qsub`.
+Sometimes you may need to invoke a script from a script, such as using a cron job to watch a folder for the appearance of a file. When a qualifying file appears, a script will kick of a downstream script to process the file. In this case, you construct your script call as a string and then then a pipe to `qsub`.
 
 {% code title="example-alternative.sh" %}
 ```bash
@@ -93,7 +91,7 @@ E.g. Start a job with 2 cpus and 4GB memory \(RAM\) that will run on a node in t
 qsub -l ncpus=2,mem=4GB,walltime=05:00:00,model=c3
 ```
 
-#### \*Nodes
+### \*Nodes
 
 c1 and c2 are shared memory systems, so you do not need to use the select argument. c3 is a cluster of nodes with 24 cpus and 32GB of memory each. To use more than one node on c3, use the select argument. Note that parameters are separated with colons instead of commas.
 
