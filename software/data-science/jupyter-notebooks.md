@@ -41,7 +41,7 @@ The hostname should be displayed. Then, using the table below, find out the IP a
 | Hostname | IP address |
 | -------- | ---------- |
 | c1       | 10.10.1.1  |
-| c2       | 10.2.1.61  |
+| c2       | 10.10.2.1  |
 | c3-0     | 10.10.3.0  |
 | c3-1     | 10.10.3.1  |
 | c3-2     | 10.10.3.2  |
