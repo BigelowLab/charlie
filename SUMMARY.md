@@ -27,10 +27,10 @@
   * [ANI Calculation](software/bioinformatics/ani-calculation.md)
   * [Anvi'o](software/bioinformatics/anvio.md)
   * [BLAST](software/bioinformatics/blast.md)
+  * [Geneious](software/bioinformatics/blast-1.md)
   * [dada2](software/bioinformatics/dada2.md)
   * [Prokka](software/bioinformatics/prokka.md)
   * [sag-mg-recruit](software/bioinformatics/sag-mg-recruit.md)
   * [Turbomole](software/bioinformatics/turbomole.md)
   * [VirSorter](software/bioinformatics/virsorter.md)
   * [Other Bioinformatics Software](software/bioinformatics/other-bioinformatics-software.md)
-
