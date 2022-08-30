@@ -32,7 +32,7 @@ Putting together a job submission requires you provide the parameters required t
   
 module use /mod/bigelow
 module load blast
-blastx -query my_seqs.fasta -db nr -outfmt 6 -num_descriptions 10 -num_alignments 10 -evalue 0.001 -num_threads 8 -o outputblastfile.txt
+blastx -query my_seqs.fasta -db nr -outfmt 6 -num_descriptions 10 -num_alignments 10 -evalue 0.001 -num_threads 8 -out outputblastfile.txt
 ```
 
 #### Submit the job
