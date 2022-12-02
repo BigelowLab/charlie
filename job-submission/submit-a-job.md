@@ -50,6 +50,22 @@ echo "${MODULE_STUFF}; ${SCRIPT_STUFF}" | ${QSUB_STUFF}
 ```
 {% endcode %}
 
+## Example executable script with flexible parameters
+
+```
+QSUBAPP=/opt/pbs/bin/qsub
+memory=${1:-32}gb
+queue=${2:-devel}
+vnode=${3:-c4-3}
+
+#QSUB_STUFF="${QSUBAPP} -N cath-i -I -l walltime=08:00:00,ncpus=4,memory=${memory},vnode=${vnode} -q ${queue}"
+QSUB_STUFF="${QSUBAPP} -N cath-i -I -l walltime=08:00:00,ncpus=4,mem=${memory},vnode=${vnode}"
+
+${QSUB_STUFF}
+```
+
+
+
 ## Options
 
 Use the following options when using qsub to customize the job parameters and select resources to request.
@@ -123,6 +139,7 @@ qsub -q high -l ncpus=1,mem=1gb -- command
 # Run PBS submission script
 qsub /path/to/script.sh
 ```
+
 
 ## Related docs
 
